@@ -1,0 +1,391 @@
+:root {
+    --primary-color: #FFDE00;
+    --primary-light-color: #FFE769;
+    --secondary-color: #FFE4BA;
+    --secondary-light-color: #FFF6E8;
+    --post-color: #62EEA8;
+    --delete-color: #FF9F9F;
+    --light-color: #FFFEFC;
+    --grey-color: #747E79;
+    --dark-color: #000000;
+    --white-color: #FFFEFC;
+
+    --primary-font: 'Cabin', sans-serif;
+    --seconday-font: 'Calistoga', sans-serif;
+    
+    --border-width: 3px;
+    --element-border-radius: 5px;
+    
+    --button-height: 5px;
+    
+    --small-button-height: 2px;
+    
+    --element-padding: 0.8em;
+    
+    --maximum-width: 320px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+body {
+    color: var(--dark-color);
+    background-color: var(--secondary-light-color);
+    font-family: var(--primary-font);
+}
+
+/* === Typography === */
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+h2, h3 {
+    font-weight: 500;
+}
+
+.app-title {
+    font-family: var(--seconday-font);
+    font-size: 2.5em;
+    text-align: center;
+}
+
+/* === Sections === */
+
+section {
+    margin: 3em 0;
+}
+
+.auth-fields-and-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+/* === User Section === */
+
+.user-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8em;
+}
+
+.user-section img {
+    width: 3.75em;
+    height: 3.75em;
+    border-radius: 100%;
+    border: var(--border-width) solid var(--dark-color);
+}
+
+.user-section h2 {
+    font-size: 1.2em;
+}
+
+/* === Post Section === */
+
+.post-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+/* == Post Section - Mood Emojis == */
+
+.mood-emojis {
+    display: flex;
+}
+
+.mood-emoji-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8em;
+    gap: 0.3em;
+    background-color: transparent;
+    border: 0;
+}
+
+.mood-emoji-btn:hover {
+    transform: scale(1.2);
+}
+
+.mood-emoji-btn img {
+    width: 3.1em;
+    height: 3.1em;
+}
+
+.selected-emoji {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.unselected-emoji {
+    transform: scale(1);
+    opacity: 0.5;
+}
+
+/* === Posts Section === */
+
+.posts-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+	margin-bottom: 1.8em;
+}
+
+/* == Posts Section - Filters == */
+
+.filters-and-posts-section {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+}
+
+.filters-section {
+    display: flex;
+    gap: 0.4em;
+}
+
+.filter-btn {
+    color: var(--dark-color);
+    font-size: 0.9em;
+    padding: 0.3em;
+    background-color: transparent;
+}
+
+.selected-filter {
+    color: var(--white-color);
+    background-color: var(--dark-color);
+}
+
+/* == Posts Section - Posts == */
+
+.post {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+    padding: 0.8em;
+    border-radius: var(--element-border-radius);
+    gap: 0.4em;
+}
+
+/* = Posts Section - Posts - Header = */
+
+.post .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post .header h3 {
+    font-size: 1em;
+}
+
+.post .header img {
+    width: 2em;
+    height: 2em;
+}
+
+/* = Posts Section - Posts - Body = */
+
+.post p {
+    font-size: 0.9em;
+    line-height: 1.3em;
+}
+
+/* = Posts Section - Posts - Footer = */
+
+.post .footer {
+    display: flex;
+    align-self: flex-start;
+    gap: 0.4em;
+}
+
+.post .footer button {
+    font-size: 0.9em;
+    padding: 0.2em 0.8em;
+    box-shadow: 0px var(--small-button-height) 0px 0px var(--dark-color);
+    position: relative;
+}
+
+.post .footer button:hover {
+    top: var(--small-button-height);
+    box-shadow: none;
+}
+
+.post .footer .edit-color {
+    background-color: var(--post-color);
+}
+
+.post .footer .delete-color {
+    background-color: var(--delete-color);
+}
+
+/* === Nav === */
+
+nav {
+    margin: 0.6em 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* === Structure === */
+
+.container {
+    max-width: var(--maximum-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#logged-out-view .container {
+    gap: 2em;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+/* === Common for elements === */
+
+input, button, textarea {
+    font-family: inherit;
+    padding: var(--element-padding);
+    border-radius: var(--element-border-radius);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input, button {
+    font-size: 1.1em;
+    text-align: center;
+    border: var(--border-width) solid var(--dark-color);
+}
+
+input:focus, button:focus, textarea:focus {
+    outline: none;
+}
+
+/* === Input fields === */
+
+textarea {
+    font-size: 1em;
+    border: 0;
+    box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, .25);
+    resize: none;
+    height: 6em;
+}
+
+textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--grey-color);
+    opacity: 1; /* Firefox */
+}
+
+textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--grey-color);
+}
+
+textarea::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--grey-color);
+}
+
+input {
+    font-weight: 300;
+}
+
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--grey-color);
+    opacity: 1; /* Firefox */
+}
+
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--grey-color);
+}
+
+input::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--grey-color);
+}
+
+/* === Buttons === */
+
+button {
+    font-weight: 600;
+    width: 100%;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    box-shadow: 0px var(--button-height) 0px 0px var(--dark-color);
+    position: relative;
+}
+
+.primary-btn:hover {
+    top: var(--button-height);
+    box-shadow: none;
+}
+
+.secondary-btn {
+    padding: 0.4em;
+    background-color: transparent;
+}
+
+.secondary-btn:hover {
+    color: var(--light-color);
+    background-color: var(--dark-color);
+}
+
+.provider-btn {
+    color: var(--dark-color);
+    background-color: var(--light-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    border: 0;
+    box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, .25);
+}
+
+.provider-btn:hover {
+    transition: all 0.2s ease;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, .25);
+}
+
+.google-btn-logo {
+    width: 1.375em;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 1.875em;
+}
+
+.icon-img-btn:hover {
+    filter: invert(0.5);
+}
+
+/* === IDs === */
+
+#logged-out-view {
+    display: none;
+}
+
+#logged-in-view {
+    display: none;
+    margin: 0;
+}
